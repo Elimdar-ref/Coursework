@@ -18,6 +18,10 @@ public class Employee {
         this.id = number++;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getLastName() {
         return this.lastName;
     }
@@ -36,14 +40,6 @@ public class Employee {
 
     public int getSalary() {
         return this.salary;
-    }
-
-    public void setDepartment(int department) {
-        this.department = department;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
 
     }
 
