@@ -1,13 +1,20 @@
 public class Main {
     private static final Employee[] worker = new Employee[10];
-
-    public static void main(String[] args) {
+    private static Employee[] initEmployee() {
         worker[0] = new Employee("Иванов ", "Иван ", "Иванович ", 1, 90000);
         worker[1] = new Employee("Петров ", "Петр ", "Петрович ", 2, 70000);
         worker[2] = new Employee("Михайлов ", "Михаил ", "Михайлович ", 3, 60000);
         worker[3] = new Employee("Сергеева ", "Екатерина ", "Сергеевна ", 5, 150000);
         worker[4] = new Employee("Васильев ", "Василий ", "Васильвич ", 4, 130000);
+        for (int i = 0; i < worker.length; i++) {
+            if (worker[i] != null) {
+            }
+        }
+        return worker;
+    }
 
+    public static void main(String[] args) {
+        initEmployee();
         print();
         System.out.println("Сумма затрат за месяц составила " + calculateSumOfSalaries(worker) + " рублей");
         Employee employee = findEmployeeWithMinSalary(worker);
@@ -21,6 +28,7 @@ public class Main {
     }
 
     public static void print() {
+        System.out.println("\nСписов всех сотрудников");
         for (int i = 0; i < worker.length; i++) {
             if (worker[i] != null) {
                 System.out.println(worker[i]);

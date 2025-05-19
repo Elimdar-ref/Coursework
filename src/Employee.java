@@ -38,6 +38,30 @@ public class Employee {
         return this.department;
     }
 
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setFerstName(String ferstName) {
+        this.ferstName = ferstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public void setDepartment(int department) {
+        this.department = department;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getSalary() {
         return this.salary;
 
