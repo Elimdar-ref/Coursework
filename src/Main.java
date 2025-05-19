@@ -1,7 +1,6 @@
 public class Main {
-
-    public static void main(String[] args) {
-        Employee[] worker = new Employee[10];
+    private static final Employee[] worker = new Employee[10];
+    private static Employee[] initEmployee() {
         worker[0] = new Employee("Иванов ", "Иван ", "Иванович ", 1, 90000);
         worker[1] = new Employee("Петров ", "Петр ", "Петрович ", 2, 70000);
         worker[2] = new Employee("Михайлов ", "Михаил ", "Михайлович ", 3, 60000);
@@ -9,9 +8,14 @@ public class Main {
         worker[4] = new Employee("Васильев ", "Василий ", "Васильвич ", 4, 130000);
         for (int i = 0; i < worker.length; i++) {
             if (worker[i] != null) {
-            System.out.println(worker[i]);
             }
         }
+        return worker;
+    }
+
+    public static void main(String[] args) {
+        initEmployee();
+        print();
         System.out.println("Сумма затрат за месяц составила " + calculateSumOfSalaries(worker) + " рублей");
         Employee employee = findEmployeeWithMinSalary(worker);
         System.out.println("Сотрудник с минимальной ЗП - " + employee.getLastName() + employee.getFerstName() +
@@ -20,9 +24,14 @@ public class Main {
         System.out.println("Cотрудник с максимальной ЗП " + employees.getLastName() + employees.getFerstName() +
                 employees.getMiddleName() + employees.getDepartment() + " отдел " + employees.getSalary() + " рублей");
         System.out.println("Средняя ЗП за месяц составила " + calculateAverageOfSalaries(worker) + " рублей");
+        printLastName();
+    }
+
+    public static void print() {
+        System.out.println("\nСписов всех сотрудников");
         for (int i = 0; i < worker.length; i++) {
             if (worker[i] != null) {
-        System.out.println(worker[i].toStringFullName());
+                System.out.println(worker[i]);
             }
         }
     }
@@ -59,5 +68,13 @@ public class Main {
 
     private static double calculateAverageOfSalaries(Employee[] worker) {
         return (double) calculateSumOfSalaries(worker) / worker.length;
+    }
+
+    public static void printLastName() {
+        for (int i = 0; i < worker.length; i++) {
+            if (worker[i] != null) {
+                System.out.println(worker[i].toStringFullName());
+            }
+        }
     }
 }

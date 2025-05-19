@@ -18,6 +18,10 @@ public class Employee {
         this.id = number++;
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getLastName() {
         return this.lastName;
     }
@@ -34,8 +38,16 @@ public class Employee {
         return this.department;
     }
 
-    public int getSalary() {
-        return this.salary;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setFerstName(String ferstName) {
+        this.ferstName = ferstName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
     public void setDepartment(int department) {
@@ -44,6 +56,14 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getSalary() {
+        return this.salary;
 
     }
 
